@@ -6,14 +6,7 @@
  *   Deskripsi           : Soal mengenai kevalidan suatu string, dan mencari banyaknya
  */
 
-/*
 
-11000
-11010
-00101
-00011
-
-*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,22 +16,7 @@ typedef struct n{
     struct n* next;
 }Node;
 
-void addToEnd(Node ** head, char c){
-    Node * newEl = (Node*)malloc(sizeof(Node));
-    newEl->kur = c;
-    newEl->next = NULL;
-    if(*head == NULL){
-        *head = newEl;
-        return;
-    }
-    Node *cur;
-    cur = *head;
-    while(cur->next!=NULL){
-        cur = cur->next;
-    }
-    cur->next = newEl;
-    return;
-}
+
 
 void addToStart(Node **head, char c){
     Node * newEl = (Node*)malloc(sizeof(Node));
@@ -146,7 +124,12 @@ void findValids(int n){
             show(head);
         }
     }
+    if(n == 0){
+        printf("TOTAL 1\n");
+        return;
+    }
     printf("TOTAL %d\n", banyak);
+    return;
 
 }
 
